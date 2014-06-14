@@ -1,0 +1,12 @@
+c:\users\增偉\documents\visual studio 2012\Projects\Snake Project\Console Snake\bin\Debug\Console Snake.exe.config
+C:\Users\增偉\documents\visual studio 2012\Projects\Snake Project\Console Snake\bin\Debug\Console Snake.exe
+C:\Users\增偉\documents\visual studio 2012\Projects\Snake Project\Console Snake\bin\Debug\Console Snake.pdb
+C:\Users\增偉\documents\visual studio 2012\Projects\Snake Project\Console Snake\obj\Debug\Console Snake.csprojResolveAssemblyReference.cache
+C:\Users\增偉\documents\visual studio 2012\Projects\Snake Project\Console Snake\obj\Debug\Console Snake.exe
+C:\Users\增偉\documents\visual studio 2012\Projects\Snake Project\Console Snake\obj\Debug\Console Snake.pdb
+E:\Dropbox\Snake Project\Console Snake\bin\Debug\Console Snake.exe.config
+E:\Dropbox\Snake Project\Console Snake\obj\Debug\Console Snake.exe
+E:\Dropbox\Snake Project\Console Snake\obj\Debug\Console Snake.pdb
+E:\Dropbox\Snake Project\Console Snake\obj\Debug\Console Snake.csprojResolveAssemblyReference.cache
+E:\Dropbox\Snake Project\Console Snake\bin\Debug\Console Snake.exe
+E:\Dropbox\Snake Project\Console Snake\bin\Debug\Console Snake.pdb
