@@ -1,0 +1,9 @@
+c:\users\增偉\documents\visual studio 2012\Projects\qUIZ\qUIZ\bin\Debug\qUIZ.exe.config
+c:\users\增偉\documents\visual studio 2012\Projects\qUIZ\qUIZ\bin\Debug\qUIZ.exe
+c:\users\增偉\documents\visual studio 2012\Projects\qUIZ\qUIZ\bin\Debug\qUIZ.pdb
+c:\users\增偉\documents\visual studio 2012\Projects\qUIZ\qUIZ\obj\Debug\qUIZ.csprojResolveAssemblyReference.cache
+c:\users\增偉\documents\visual studio 2012\Projects\qUIZ\qUIZ\obj\Debug\qUIZ.Form1.resources
+c:\users\增偉\documents\visual studio 2012\Projects\qUIZ\qUIZ\obj\Debug\qUIZ.Properties.Resources.resources
+c:\users\增偉\documents\visual studio 2012\Projects\qUIZ\qUIZ\obj\Debug\qUIZ.csproj.GenerateResource.Cache
+c:\users\增偉\documents\visual studio 2012\Projects\qUIZ\qUIZ\obj\Debug\qUIZ.exe
+c:\users\增偉\documents\visual studio 2012\Projects\qUIZ\qUIZ\obj\Debug\qUIZ.pdb

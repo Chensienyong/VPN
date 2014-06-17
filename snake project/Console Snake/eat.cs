@@ -10,7 +10,7 @@ namespace Console_Snake
     {
         static protected bool eat = false;
         static protected bool foodavail = false;
-        static protected int[] foodloc = new int[2] { 99, 99 };
+        static protected int[] foodloc = new int[2];
         static protected void makanan(bool[,] loc)
         {
             Random x = new Random();
@@ -18,8 +18,8 @@ namespace Console_Snake
             bool locavailable = false;
             do
             {
-                int rx = x.Next(79);
-                int ry = y.Next(24);
+                int rx = x.Next(0,79);
+                int ry = y.Next(0,24);
 
                 bool c = false;
                 if (loc[rx,ry]==true)
