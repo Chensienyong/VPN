@@ -50,6 +50,7 @@ namespace qUIZ
             Form1_Load(sender,e);
             krg.Enabled = false;
             tbh.Enabled = true;
+            input.Enabled = true;
         }
         TextBox[] tb = new TextBox[0];
         private void tambah(object sender, EventArgs e)
@@ -64,12 +65,13 @@ namespace qUIZ
                     tb[a * i + j].Name = "tb" + (a * i + j).ToString();
                     tb[a * i + j].Size = new Size(20, 20);
                     tb[a * i + j].Location = new Point(200 + (j * 21), 20 + (i * 21));
-                    tb[a * i + j].Text = (a * i + j).ToString();
+                    //tb[a * i + j].Text = (a * i + j).ToString();
                     this.Controls.Add(tb[a*i+ j]);
                 }
             }
             krg.Enabled = true;
             tbh.Enabled = false;
+            input.Enabled = false;
 
         }
     }
