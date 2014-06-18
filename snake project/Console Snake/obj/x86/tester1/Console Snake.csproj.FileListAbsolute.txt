@@ -9,3 +9,9 @@ C:\Users\增偉\Documents\VPN\snake project\Console Snake\obj\x86\tester1\Consol
 C:\Users\增偉\Documents\VPN\snake project\Console Snake\bin\x86\tester1\Console Snake.exe
 C:\Users\增偉\Documents\VPN\snake project\Console Snake\bin\x86\tester1\Console Snake.pdb
 C:\Users\增偉\Documents\VPN\snake project\Console Snake\obj\x86\tester1\Console Snake.csprojResolveAssemblyReference.cache
+D:\VPN\snake project\Console Snake\bin\x86\tester1\Console Snake.exe.config
+D:\VPN\snake project\Console Snake\obj\x86\tester1\Console Snake.exe
+D:\VPN\snake project\Console Snake\obj\x86\tester1\Console Snake.pdb
+D:\VPN\snake project\Console Snake\bin\x86\tester1\Console Snake.exe
+D:\VPN\snake project\Console Snake\bin\x86\tester1\Console Snake.pdb
+D:\VPN\snake project\Console Snake\obj\x86\tester1\Console Snake.csprojResolveAssemblyReference.cache
