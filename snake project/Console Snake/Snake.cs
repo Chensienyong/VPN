@@ -60,6 +60,7 @@ namespace Console_Snake
             {
             while (true)
             {
+                //checkfood(x, y);
                 Console.SetCursorPosition(x,y);
                 Console.ForegroundColor = color;
                 Console.Write((char)2);
@@ -67,6 +68,7 @@ namespace Console_Snake
                 if (screen[x, y] == true)
                 {
                     aborting = true;
+                    t1.Abort();
                     Thread.CurrentThread.Abort();
                 }
                 if(aborting)
@@ -150,7 +152,7 @@ namespace Console_Snake
                 while (t2.IsAlive)
                 {
                     head(Console.ReadKey(true));
-                    //Thread.Sleep(50);
+                    Thread.Sleep(50);
 
                 }
             }));
