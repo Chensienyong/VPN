@@ -15,7 +15,6 @@ namespace Snake_Multiplayer
 {
     public partial class Form1 : Form
     {
-        public Form2 form2 = new Form2();
         SoundPlayer choose = new SoundPlayer("D:/Flashdisk/up-down");
         public Form1()
         {
@@ -28,13 +27,6 @@ namespace Snake_Multiplayer
             timer1.Enabled = true;
             toolStripProgressBar1.Visible = true;
         }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            form2.Show();
-            this.Hide();
-        }
-
         private void button3_Click(object sender, EventArgs e)
         {
 
@@ -50,7 +42,9 @@ namespace Snake_Multiplayer
                 toolStripProgressBar1.Value = 0;
                 toolStripProgressBar1.Visible = false;
                 toolStripStatusLabel2.Text = "Complete";
-                Process.Start("D:/VPN/snake project/Console Snake/debugging test/Console Snake.exe");
+                this.Hide();
+                Process.Start("Console Snake.exe");
+                
             }
         }
 
@@ -72,6 +66,19 @@ namespace Snake_Multiplayer
         private void button3_MouseEnter(object sender, EventArgs e)
         {
             toolStripStatusLabel1.Text = "See the credit of the snake multiplayer";
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form2 form2 = new Form2();
+            form2.Show();
+            form2.FormClosed+=new FormClosedEventHandler(muncul);
+        }
+
+        private void muncul(object sender, EventArgs e)
+        {
+            this.Show();
         }
     }
 }

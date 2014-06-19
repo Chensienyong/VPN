@@ -17,7 +17,7 @@ namespace Console_Snake
             Snake.t3.Start();
             Console.ReadKey(true);
             snake1.t2.Start();
-            Thread.Sleep(50);
+            Thread.Sleep(25);
             snake2.t2.Start();
             Snake.t1.Start();
             
