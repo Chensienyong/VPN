@@ -9,6 +9,7 @@ namespace Console_Snake
 {
     class Snake:movement
     {
+        static public int speed=200;
         static private void checkfood(int x, int y)
         {
             if (x == foodloc[0] && y == foodloc[1])
@@ -56,6 +57,9 @@ namespace Console_Snake
                 Console.ForegroundColor = color; 
                 Console.Write((char)2);
             }
+            Console.SetCursorPosition(point[0][0], point[0][1]);
+            screen[point[0][0], point[0][1]] = false;
+            Console.Write(' ');
             t2 = new Thread(new ThreadStart(delegate
             {
             while (true)
@@ -75,7 +79,6 @@ namespace Console_Snake
                     Thread.CurrentThread.Abort();
                 point.Add(tmp1);
                 screen[x, y] = true;
-                Thread.Sleep(100);
                 checkfood(x, y);
                 if (!foodavail)
                 {
@@ -101,6 +104,7 @@ namespace Console_Snake
                         point.RemoveAt(0);
                     }
                 }
+                Thread.Sleep(speed);
                 if (snakehead[nomor-1] == 1)
                 {
                     if (y > 0)
@@ -152,10 +156,11 @@ namespace Console_Snake
                 while (t2.IsAlive)
                 {
                     head(Console.ReadKey(true));
-                    Thread.Sleep(50);
+                    Thread.Sleep(speed/2+speed/4);
 
                 }
             }));
+            ///*
             //t2.Start();
             t3 = new Thread(new ThreadStart(delegate
             {
@@ -164,7 +169,7 @@ namespace Console_Snake
                     
                 }
             }));
-            //t1.Start();
+            //t1.Start();*/
         }
     }
 }

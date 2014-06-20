@@ -13,14 +13,15 @@ namespace Console_Snake
         {
             Console.SetWindowSize(Console.WindowWidth, 30);
             Snake snake1 = new Snake();
+            Snake.speed = 100;
             Snake snake2 = new Snake(50,2,2,ConsoleColor.Red);
             Snake.t3.Start();
             Console.ReadKey(true);
             snake1.t2.Start();
-            Thread.Sleep(25);
+            Thread.Sleep(26);
             snake2.t2.Start();
             Snake.t1.Start();
-            
+            Console.ReadKey();    
         }
     }
 }
