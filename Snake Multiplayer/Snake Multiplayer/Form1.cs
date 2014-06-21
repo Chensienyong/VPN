@@ -15,8 +15,7 @@ namespace Snake_Multiplayer
 {
     public partial class Form1 : Form
     {
-        public Form2 form2 = new Form2();
-        SoundPlayer choose = new SoundPlayer("D:/Flashdisk/up-down");
+        SoundPlayer choose = new SoundPlayer(@"D:\Alwin\Snake Multiplayer\Snake Multiplayer\Resources\up-down.wav");
         public Form1()
         {
             InitializeComponent();
@@ -31,13 +30,18 @@ namespace Snake_Multiplayer
 
         private void button2_Click(object sender, EventArgs e)
         {
-            form2.Show();
             this.Hide();
+            Form2 form2 = new Form2();
+            form2.Show();
+            form2.FormClosed += new FormClosedEventHandler(muncul);
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            Form3 form3 = new Form3();
+            form3.Show();
+            form3.FormClosed += new FormClosedEventHandler(muncul);
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -50,7 +54,9 @@ namespace Snake_Multiplayer
                 toolStripProgressBar1.Value = 0;
                 toolStripProgressBar1.Visible = false;
                 toolStripStatusLabel2.Text = "Complete";
-                Process.Start("D:/VPN/snake project/Console Snake/debugging test/Console Snake.exe");
+                this.Hide();
+                Process.Start("Console Snake.exe").WaitForExit();
+                this.Show();
             }
         }
 
@@ -62,16 +68,24 @@ namespace Snake_Multiplayer
         private void button1_MouseEnter(object sender, EventArgs e)
         {
             toolStripStatusLabel1.Text = "Start the game";
+            choose.Play();
         }
 
         private void button2_MouseEnter(object sender, EventArgs e)
         {
             toolStripStatusLabel1.Text = "See How to Play snake";
+            choose.Play();
         }
 
         private void button3_MouseEnter(object sender, EventArgs e)
         {
             toolStripStatusLabel1.Text = "See the credit of the snake multiplayer";
+            choose.Play();
+        }
+
+        private void muncul(object sender, EventArgs e)
+        {
+            this.Show();
         }
     }
 }

@@ -65,6 +65,7 @@
             this.button2.TabIndex = 1;
             this.button2.Text = "How to Play";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             this.button2.MouseEnter += new System.EventHandler(this.button2_MouseEnter);
             // 
             // button3
@@ -135,7 +136,7 @@
             this.pictureBox2.Image = global::Snake_Multiplayer.Properties.Resources.seperti_ular;
             this.pictureBox2.Location = new System.Drawing.Point(60, -1);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(420, 130);
+            this.pictureBox2.Size = new System.Drawing.Size(422, 148);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 5;
             this.pictureBox2.TabStop = false;
@@ -147,13 +148,14 @@
             this.BackgroundImage = global::Snake_Multiplayer.Properties.Resources.bg2;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(551, 414);
-            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
+            this.Controls.Add(this.pictureBox2);
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Snake Multiplayer";
             this.MouseEnter += new System.EventHandler(this.Form1_MouseEnter);
             this.statusStrip1.ResumeLayout(false);

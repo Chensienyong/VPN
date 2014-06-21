@@ -11,10 +11,10 @@ using System.Media;
 
 namespace Snake_Multiplayer
 {
-    public partial class Form2 : Form
+    public partial class Form3 : Form
     {
         SoundPlayer choose = new SoundPlayer(@"D:\Alwin\Snake Multiplayer\Snake Multiplayer\Resources\up-down.wav");
-        public Form2()
+        public Form3()
         {
             InitializeComponent();
         }
@@ -27,8 +27,6 @@ namespace Snake_Multiplayer
         private void button1_MouseEnter(object sender, EventArgs e)
         {
             choose.Play();
-            
         }
-
     }
 }
