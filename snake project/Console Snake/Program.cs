@@ -9,6 +9,13 @@ namespace Console_Snake
 {
     class Program
     {
+        static public int hiscore()
+        {
+            if (new FileInfo("score.dat").Exists)
+                return int.Parse(File.ReadAllText("score.dat"));
+            else
+                return 0;
+        }
         /*static Thread pausing = new Thread(new ThreadStart(delegate
             {
                 bool cek1 = false;
@@ -69,6 +76,108 @@ namespace Console_Snake
                 }
             }));
             pausing.Start();
+            
+            while (!Snake.aborting)
+            {
+            }
+            Console.SetCursorPosition(20,26);
+            Console.ForegroundColor = ConsoleColor.Magenta;
+            Console.WriteLine("GAME OVER!!!");            
+                snake1.t2.Abort();
+                snake2.t2.Abort();
+                pausing.Abort();
+                //File.WriteAllText("new.txt", (point.Count - 2).ToString());
+                Snake.t1.Abort();
+                bool snakea=false;
+                bool snakeb=false;
+                foreach (var x in snake2.point)
+                {
+                    if (snake1.point.Last()[0] == x[0] && snake1.point.Last()[1] == x[1])
+                    {
+                        if (snake2.point.Last()[0] != x[0] && snake2.point.Last()[1] != x[1])
+                        {
+                            snakeb = true;
+                            break;
+                        }
+                        snakea = true;
+                        break;
+                    }
+                }
+                foreach (var x in snake1.point)
+                {
+                    if (snake2.point.Last()[0] == x[0] && snake2.point.Last()[1] == x[1])
+                    {
+                        if (snake1.point.Last()[0] != x[0] && snake1.point.Last()[1] != x[1])
+                        {
+                            snakeb = true;
+                            break;
+                        }
+                    }
+                }
+                if (snake2.point.Last()[0] == snake1.point.Last()[0] && snake2.point.Last()[1] == snake1.point.Last()[1])
+                {
+                    //Console.WriteLine("Player1 Wins!!!");
+                    snakea = true;
+                    snakeb = true;
+                }
+                if (snakea && snakeb)
+                {
+                    if (snake1.point.Count > snake2.point.Count-1)
+                    {
+                        Console.SetCursorPosition(20, 27);
+                        Console.ForegroundColor = ConsoleColor.Magenta;
+                        Console.WriteLine("Player1 Wins!!!");
+                    }
+                    else if (snake1.point.Count < snake2.point.Count-1)
+                    {
+                        Console.SetCursorPosition(20, 27);
+                        Console.ForegroundColor = ConsoleColor.Magenta;
+                        Console.WriteLine("Player2 Wins!!!");
+                    }
+                    else
+                    {
+                        Console.SetCursorPosition(20, 27);
+                        Console.ForegroundColor = ConsoleColor.Magenta;
+                        Console.WriteLine("Draw!!!");
+                    }
+                }
+                else if (snakea && !snakeb)
+                {
+                    Console.SetCursorPosition(20, 27);
+                    Console.ForegroundColor = ConsoleColor.Magenta;
+                    Console.WriteLine("Player2 Wins!!!");
+                }
+                else if (!snakea && snakeb)
+                {
+                    Console.SetCursorPosition(20, 27);
+                    Console.ForegroundColor = ConsoleColor.Magenta;
+                    Console.WriteLine("Player1 Wins!!!");
+                }
+                else if (!snakea && !snakeb)
+                {
+                    int counta = 0;
+                    foreach (var x in snake1.point)
+                    {
+                        if (snake1.point.Last()[0] == x[0] && snake1.point.Last()[1] == x[1])
+                        {
+                            counta++;
+                        }
+                    }
+                    if (counta > 1)
+                    {
+                        Console.SetCursorPosition(20, 27);
+                        Console.ForegroundColor = ConsoleColor.Magenta;
+                        Console.WriteLine("Player2 Wins!!!");
+                    }
+                    else
+                    {
+                        Console.SetCursorPosition(20, 27);
+                        Console.ForegroundColor = ConsoleColor.Magenta;
+                        Console.WriteLine("Player1 Wins!!!");
+                    }
+                }
+                Console.ReadKey();
+            
             //Snake.t3.Start();
             //Console.ReadKey();    
         }
@@ -83,11 +192,29 @@ namespace Console_Snake
             snake1.t2.Start();
             Snake.t1.Start();
             Snake.t3.Start();
-            //Console.ReadKey();  
+            while (!Snake.aborting)
+            {
+            }
+            Console.SetCursorPosition(20, 26);
+            Console.ForegroundColor = ConsoleColor.Magenta;
+            Console.WriteLine("GAME OVER!!!");
+            snake1.t2.Abort();
+            Snake.t3.Abort();
+            
+            Snake.t1.Abort();
+            int hi_score = hiscore();
+            if (snake1.point.Count - 2 > hi_score)
+            {
+                Console.SetCursorPosition(20, 27);
+                Console.ForegroundColor = ConsoleColor.Magenta;
+                Console.WriteLine("Hi-Score");
+                File.WriteAllText("score.dat", (snake1.point.Count - 2).ToString());
+            }
+            Console.ReadKey();
         }
         static void Main(string[] args)
         {
-            switch(args[0])
+            switch(/*"1")*/args[0])
             {
                 case "1":
                     single_player();

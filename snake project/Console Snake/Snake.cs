@@ -74,13 +74,13 @@ namespace Console_Snake
                 int[] tmp1 = { x, y };
                 if (screen[x, y] == true)
                 {
+                    point.Add(tmp1);
                     aborting = true;
-                    File.WriteAllText("new.txt", (point.Count - 2).ToString());
                     t1.Abort();
-                    Thread.CurrentThread.Abort();
+                    //Thread.CurrentThread.Abort();
                 }
-                if(aborting)
-                    Thread.CurrentThread.Abort();
+                //if(aborting)
+                  //  Thread.CurrentThread.Abort();
                 point.Add(tmp1);
                 screen[x, y] = true;
                 checkfood(x, y);
