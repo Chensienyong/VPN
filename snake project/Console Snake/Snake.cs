@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Threading;
-
+using System.IO;
 namespace Console_Snake
 {
     class Snake:movement
@@ -18,8 +18,8 @@ namespace Console_Snake
                 foodavail = false;
             }
         }
-        static bool aborting = false;
-        static public Thread t1,t3;
+        static public bool aborting = false;
+        static public Thread t1, t3;
         public Thread t2;
         public List<int[]> point;
         static protected bool[,] screen=new bool[80,26];
@@ -60,6 +60,9 @@ namespace Console_Snake
             Console.SetCursorPosition(point[0][0], point[0][1]);
             screen[point[0][0], point[0][1]] = false;
             Console.Write(' ');
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.SetCursorPosition(0, 26 + num);
+            Console.WriteLine("Player{0} : {1}", num, point.Count-2);
             t2 = new Thread(new ThreadStart(delegate
             {
             while (true)
@@ -72,6 +75,7 @@ namespace Console_Snake
                 if (screen[x, y] == true)
                 {
                     aborting = true;
+                    File.WriteAllText("new.txt", (point.Count - 2).ToString());
                     t1.Abort();
                     Thread.CurrentThread.Abort();
                 }
@@ -94,6 +98,8 @@ namespace Console_Snake
                 }
                 else
                 {
+                    Console.SetCursorPosition(0, 26 + num);
+                    Console.WriteLine("Player{0} : {1}", num, point.Count-2);
                     if (point[point.Count - 1][0] == x && point[point.Count - 1][1] == y)
                         eat = false;
                     else
@@ -107,46 +113,46 @@ namespace Console_Snake
                 Thread.Sleep(speed);
                 if (snakehead[nomor-1] == 1)
                 {
-                    if (y > 0)
+                    if (y > 1)
                     {
                         y--;
                     }
                     else
                     {
-                        y += 24;
+                        y += 23;
                     }
                 }
                 else if (snakehead[nomor-1] == 2)
                 {
-                    if (y<25)
+                    if (y<24)
                     {
                         y++;
                     }
                     else
                     {
-                        y = 0;
+                        y = 1;
                     }
                 }
                 else if (snakehead[nomor-1] == 3)
                 {
-                    if (x > 0)
+                    if (x > 1)
                     {
                         x--;
                     }
                     else
                     {
-                        x += 79;
+                        x += 77;
                     }
                 }
                 else if (snakehead[nomor-1] == 4)
                 {
-                    if (x < 79)
+                    if (x < 78)
                     {
                         x++;
                     }
                     else
                     {
-                        x = 0;
+                        x = 1;
                     }
                 }
             }
@@ -164,9 +170,22 @@ namespace Console_Snake
             //t2.Start();
             t3 = new Thread(new ThreadStart(delegate
             {
+                bool cek1 = false;
                 while (true)
                 {
-                    
+                    if (pause)
+                    {
+                        cek1 = true;
+                        t2.Suspend();
+                    }
+                    else
+                    {
+                        if (cek1)
+                        {
+                            cek1 = false;
+                            t2.Resume();
+                        }
+                    }
                 }
             }));
             //t1.Start();*/

@@ -43,8 +43,8 @@ namespace Snake_Multiplayer
                 toolStripProgressBar1.Visible = false;
                 toolStripStatusLabel2.Text = "Complete";
                 this.Hide();
-                Process.Start("Console Snake.exe");
-                
+                Process.Start("Console Snake.exe","1").WaitForExit();
+                this.Show();                
             }
         }
 

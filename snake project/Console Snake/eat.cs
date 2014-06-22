@@ -18,14 +18,16 @@ namespace Console_Snake
             bool locavailable = false;
             do
             {
-                int rx = x.Next(0,79);
-                int ry = y.Next(0,24);
+              int rx = x.Next(1,78);
+              int ry = y.Next(1,23);
+              //                  int rx = x.Next(0,3);
+              //                  int ry = y.Next(0,2);
 
                 bool c = false;
                 if (loc[rx,ry]==true)
                     {
                         c = true;
-                        break;
+                        //break;
                     }
                 if (!c)
                 {
