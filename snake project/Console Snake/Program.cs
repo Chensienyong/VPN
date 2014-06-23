@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Threading;
 using System.IO;
+using System.Security;
 namespace Console_Snake
 {
     class Program
@@ -188,6 +189,9 @@ namespace Console_Snake
             Snake snake1 = new Snake();
             Snake.speed = 200;
             Console.SetCursorPosition(0, 0);
+            Console.SetCursorPosition(40, 26);
+            Console.ForegroundColor = ConsoleColor.Magenta;
+            Console.WriteLine("Hi-Score = " + hiscore());
             Console.ReadKey(true);
             snake1.t2.Start();
             Snake.t1.Start();
@@ -203,12 +207,15 @@ namespace Console_Snake
             
             Snake.t1.Abort();
             int hi_score = hiscore();
-            if (snake1.point.Count - 2 > hi_score)
+            if (snake1.score > hi_score)
             {
                 Console.SetCursorPosition(20, 27);
                 Console.ForegroundColor = ConsoleColor.Magenta;
                 Console.WriteLine("Hi-Score");
-                File.WriteAllText("score.dat", (snake1.point.Count - 2).ToString());
+                File.WriteAllText("score.dat", (snake1.score).ToString());
+                Console.SetCursorPosition(40, 26);
+                Console.ForegroundColor = ConsoleColor.Magenta;
+                Console.WriteLine("Hi-Score = " + hiscore());
             }
             Console.ReadKey();
         }

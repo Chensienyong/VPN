@@ -21,7 +21,7 @@ namespace Snake_Multiplayer
             InitializeComponent();
             toolStripProgressBar1.Value = 0;
         }
-
+        public bool button4click = false;
         private void button1_Click(object sender, EventArgs e)
         {
             timer1.Enabled = true;
@@ -43,7 +43,19 @@ namespace Snake_Multiplayer
                 toolStripProgressBar1.Visible = false;
                 toolStripStatusLabel2.Text = "Complete";
                 this.Hide();
-                Process.Start("Console Snake.exe","1").WaitForExit();
+                if (button4click)
+                {
+                    button4click = false;
+                    Process.Start("Console Snake.exe", "2").WaitForExit();
+                }
+                else
+                {
+                    Process.Start("Console Snake.exe", "1").WaitForExit();
+                    if (new FileInfo("score.dat").Exists)
+                        label1.Text = "Hi-Score : " + File.ReadAllText("score.dat");
+                    else
+                        label1.Text = "Hi-Score : 0";
+                }
                 this.Show();                
             }
         }
@@ -79,6 +91,27 @@ namespace Snake_Multiplayer
         private void muncul(object sender, EventArgs e)
         {
             this.Show();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            button4click = true;
+            timer1.Enabled = true;
+            toolStripProgressBar1.Visible = true;
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            if (new FileInfo("score.dat").Exists)
+                label1.Text ="Hi-Score : "+ File.ReadAllText("score.dat");
+            else
+                label1.Text = "Hi-Score : 0";
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            new FileInfo("score.dat").Delete();
+            label1.Text ="Hi-Score : 0";
         }
     }
 }

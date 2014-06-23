@@ -9,6 +9,7 @@ namespace Console_Snake
 {
     class Snake:movement
     {
+        public int score = 0;
         static public int speed=200;
         static private void checkfood(int x, int y)
         {
@@ -62,7 +63,8 @@ namespace Console_Snake
             Console.Write(' ');
             Console.ForegroundColor = ConsoleColor.Yellow;
             Console.SetCursorPosition(0, 26 + num);
-            Console.WriteLine("Player{0} : {1}", num, point.Count-2);
+            score=point.Count-2;
+            Console.WriteLine("Player{0} : {1}", num, score);
             t2 = new Thread(new ThreadStart(delegate
             {
             while (true)
@@ -99,7 +101,8 @@ namespace Console_Snake
                 else
                 {
                     Console.SetCursorPosition(0, 26 + num);
-                    Console.WriteLine("Player{0} : {1}", num, point.Count-2);
+                    score=point.Count-2;
+                    Console.WriteLine("Player{0} : {1}", num, score);
                     if (point[point.Count - 1][0] == x && point[point.Count - 1][1] == y)
                         eat = false;
                     else
