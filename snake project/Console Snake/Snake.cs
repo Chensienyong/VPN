@@ -180,12 +180,19 @@ namespace Console_Snake
                     {
                         cek1 = true;
                         t2.Suspend();
+                        Console.SetCursorPosition(60, 26);
+                        Console.ForegroundColor = ConsoleColor.Yellow;
+                        Console.Write("Pause!!!");
                     }
                     else
                     {
                         if (cek1)
                         {
-                            cek1 = false;
+                            cek1 = false; 
+                            Console.SetCursorPosition(60, 26);
+                            Console.ForegroundColor = ConsoleColor.Yellow;
+                            Console.Write("        ");
+                            Program.tds();
                             t2.Resume();
                         }
                     }

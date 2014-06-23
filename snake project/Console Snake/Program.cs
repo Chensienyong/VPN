@@ -10,6 +10,23 @@ namespace Console_Snake
 {
     class Program
     {
+        static public void tds()
+        {
+            for (int i = 3; i > 0; i--)
+            {
+                Console.SetCursorPosition(60, 26);
+                Console.ForegroundColor = ConsoleColor.Yellow;
+                Console.Write(i);
+                Thread.Sleep(900);
+            }
+            Console.SetCursorPosition(60, 26);
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.Write("GO!!!");
+            Thread.Sleep(500);
+            Console.SetCursorPosition(60, 26);
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.Write("     ");
+        }
         static public int hiscore()
         {
             if (new FileInfo("score.dat").Exists)
@@ -48,9 +65,10 @@ namespace Console_Snake
             Snake snake2 = new Snake(50, 2, 2, ConsoleColor.Red);
             //Snake.t3.Start();
             Console.SetCursorPosition(0, 0);
-            Console.ReadKey(true);
+            tds();
+            //Console.ReadKey(true);
             snake1.t2.Start();
-            Thread.Sleep(Snake.speed / 4);
+            Thread.Sleep(Snake.speed / 5);
             snake2.t2.Start();
             Snake.t1.Start();
             Thread pausing = new Thread(new ThreadStart(delegate
@@ -63,14 +81,20 @@ namespace Console_Snake
                         cek1 = true;
                         snake1.t2.Suspend();
                         snake2.t2.Suspend();
+                        Console.SetCursorPosition(60, 26);
+                        Console.ForegroundColor = ConsoleColor.Yellow;
+                        Console.Write("Pause!!!");
                     }
                     else
                     {
                         if (cek1)
                         {
                             cek1 = false;
+                            Console.SetCursorPosition(60, 26);
+                            Console.Write("        ");
+                            tds();
                             snake1.t2.Resume();
-                            Thread.Sleep(Snake.speed / 4);
+                            Thread.Sleep(Snake.speed / 5);
                             snake2.t2.Resume();
                         }
                     }
@@ -80,10 +104,7 @@ namespace Console_Snake
             
             while (!Snake.aborting)
             {
-            }
-            Console.SetCursorPosition(20,26);
-            Console.ForegroundColor = ConsoleColor.Magenta;
-            Console.WriteLine("GAME OVER!!!");            
+            }    
                 snake1.t2.Abort();
                 snake2.t2.Abort();
                 pausing.Abort();
@@ -123,13 +144,17 @@ namespace Console_Snake
                 }
                 if (snakea && snakeb)
                 {
-                    if (snake1.point.Count > snake2.point.Count-1)
+
+                    Console.SetCursorPosition(20, 26);
+                    Console.ForegroundColor = ConsoleColor.Magenta;
+                    Console.WriteLine("GAME OVER!!!");        
+                    if (snake1.score > snake2.score)
                     {
                         Console.SetCursorPosition(20, 27);
                         Console.ForegroundColor = ConsoleColor.Magenta;
                         Console.WriteLine("Player1 Wins!!!");
                     }
-                    else if (snake1.point.Count < snake2.point.Count-1)
+                    else if (snake1.score < snake2.score)
                     {
                         Console.SetCursorPosition(20, 27);
                         Console.ForegroundColor = ConsoleColor.Magenta;
@@ -144,12 +169,19 @@ namespace Console_Snake
                 }
                 else if (snakea && !snakeb)
                 {
+
+                    Console.SetCursorPosition(20, 26);
+                    Console.ForegroundColor = ConsoleColor.Magenta;
+                    Console.WriteLine("GAME OVER!!!");        
                     Console.SetCursorPosition(20, 27);
                     Console.ForegroundColor = ConsoleColor.Magenta;
                     Console.WriteLine("Player2 Wins!!!");
                 }
                 else if (!snakea && snakeb)
                 {
+                    Console.SetCursorPosition(20, 26);
+                    Console.ForegroundColor = ConsoleColor.Magenta;
+                    Console.WriteLine("GAME OVER!!!");        
                     Console.SetCursorPosition(20, 27);
                     Console.ForegroundColor = ConsoleColor.Magenta;
                     Console.WriteLine("Player1 Wins!!!");
@@ -166,12 +198,20 @@ namespace Console_Snake
                     }
                     if (counta > 1)
                     {
+
+                        Console.SetCursorPosition(20, 26);
+                        Console.ForegroundColor = ConsoleColor.Magenta;
+                        Console.WriteLine("GAME OVER!!!");        
                         Console.SetCursorPosition(20, 27);
                         Console.ForegroundColor = ConsoleColor.Magenta;
                         Console.WriteLine("Player2 Wins!!!");
                     }
                     else
                     {
+
+                        Console.SetCursorPosition(20, 26);
+                        Console.ForegroundColor = ConsoleColor.Magenta;
+                        Console.WriteLine("GAME OVER!!!");        
                         Console.SetCursorPosition(20, 27);
                         Console.ForegroundColor = ConsoleColor.Magenta;
                         Console.WriteLine("Player1 Wins!!!");
@@ -192,7 +232,8 @@ namespace Console_Snake
             Console.SetCursorPosition(40, 26);
             Console.ForegroundColor = ConsoleColor.Magenta;
             Console.WriteLine("Hi-Score = " + hiscore());
-            Console.ReadKey(true);
+            tds();
+            //Console.ReadKey(true);
             snake1.t2.Start();
             Snake.t1.Start();
             Snake.t3.Start();
