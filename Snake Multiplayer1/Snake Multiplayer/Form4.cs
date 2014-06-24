@@ -8,16 +8,30 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Media;
+using System.IO;
 
 namespace Snake_Multiplayer
 {
     public partial class Form4 : Form
     {
-        int speed = 5 , wall = 1;
+        int speed = 5, wall = 1;
         SoundPlayer choose = new SoundPlayer(@"D:\Alwin\Snake Multiplayer\Snake Multiplayer\Resources\up-down.wav");
+        private string data()
+        {
+            if (new FileInfo("setting.dat").Exists)
+                return File.ReadAllText("setting.dat");
+            else
+                return "";
+        }
         public Form4()
         {
             InitializeComponent();
+            if (data().Length > 0)
+            {
+                string[] tmp=data().Split(' ');
+                speed = int.Parse(tmp[0]);
+                wall = int.Parse(tmp[1]);
+            }
             numericUpDown1.Value = speed;
             if (wall == 0)
             {
@@ -40,7 +54,6 @@ namespace Snake_Multiplayer
         {
             choose.Play();
         }
-
         private void button1_Click(object sender, EventArgs e)
         {
             speed = (int)numericUpDown1.Value;
@@ -52,6 +65,7 @@ namespace Snake_Multiplayer
             {
                 wall = 1;
             }
+            File.WriteAllText("setting.dat", speed.ToString()+" "+wall.ToString());
             this.Close();
         }
 
@@ -77,6 +91,18 @@ namespace Snake_Multiplayer
             speed = 5;
             numericUpDown1.Value = 5;
             radioButton2.Checked = true;
+        }
+
+        private void numericUpDown1_ValueChanged(object sender, EventArgs e)
+        {
+            if (numericUpDown1.Value > numericUpDown1.Maximum)
+            {
+                numericUpDown1.Value = numericUpDown1.Maximum;
+            }
+            if (numericUpDown1.Value < numericUpDown1.Minimum)
+            {
+                numericUpDown1.Value = numericUpDown1.Minimum;
+            }
         }
     }
 }
