@@ -15,7 +15,11 @@ namespace Snake_Multiplayer
 {
     public partial class Form1 : Form
     {
-        SoundPlayer choose = new SoundPlayer(@"C:\Users\增偉\Documents\VPN\Snake Multiplayer\Snake Multiplayer\Resources\up-down.wav");
+<<<<<<< HEAD
+        SoundPlayer choose = new SoundPlayer(@"D:\Alwin\Snake Multiplayer\Snake Multiplayer\Resources\up-down.wav");
+=======
+        SoundPlayer choose = new SoundPlayer("D:/Flashdisk/up-down");
+>>>>>>> 642e015509c9f180041690db24add3d0ee00ca0b
         public Form1()
         {
             InitializeComponent();
@@ -27,9 +31,24 @@ namespace Snake_Multiplayer
             timer1.Enabled = true;
             toolStripProgressBar1.Visible = true;
         }
+<<<<<<< HEAD
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form2 form2 = new Form2();
+            form2.Show();
+            form2.FormClosed += new FormClosedEventHandler(muncul);
+        }
+
+=======
+>>>>>>> 642e015509c9f180041690db24add3d0ee00ca0b
         private void button3_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            Form3 form3 = new Form3();
+            form3.Show();
+            form3.FormClosed += new FormClosedEventHandler(muncul);
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -43,6 +62,10 @@ namespace Snake_Multiplayer
                 toolStripProgressBar1.Visible = false;
                 toolStripStatusLabel2.Text = "Complete";
                 this.Hide();
+<<<<<<< HEAD
+                Process.Start("Console Snake.exe").WaitForExit();
+                this.Show();
+=======
                 if (button4click)
                 {
                     button4click = false;
@@ -57,6 +80,7 @@ namespace Snake_Multiplayer
                         label1.Text = "Hi-Score : 0";
                 }
                 this.Show();                
+>>>>>>> 642e015509c9f180041690db24add3d0ee00ca0b
             }
         }
 
@@ -67,7 +91,7 @@ namespace Snake_Multiplayer
 
         private void button1_MouseEnter(object sender, EventArgs e)
         {
-            toolStripStatusLabel1.Text = "Start the game with one player";
+            toolStripStatusLabel1.Text = "Start the game";
             choose.Play();
         }
 
@@ -81,6 +105,11 @@ namespace Snake_Multiplayer
         {
             toolStripStatusLabel1.Text = "See the credit of the snake multiplayer";
             choose.Play();
+        }
+
+        private void muncul(object sender, EventArgs e)
+        {
+            this.Show();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -115,18 +144,6 @@ namespace Snake_Multiplayer
         {
             new FileInfo("score.dat").Delete();
             label1.Text ="Hi-Score : 0";
-        }
-
-        private void button4_MouseEnter(object sender, EventArgs e)
-        {
-            toolStripStatusLabel1.Text = "Start the game with two player"; 
-            choose.Play();
-        }
-
-        private void button5_MouseEnter(object sender, EventArgs e)
-        {
-            toolStripStatusLabel1.Text = "Reset current Hi-Score";
-            choose.Play();
         }
     }
 }

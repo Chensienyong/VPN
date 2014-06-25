@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Console_Snake
 {
-    class eats
+    abstract class eats
     {
         static protected bool eat = false;
         static protected bool foodavail = false;

@@ -7,7 +7,7 @@ using System.Threading;
 namespace Console_Snake
 {
    
-    class movement:eats
+    abstract class movement:eats
     {
         static public bool pause = false;
         protected byte num=1;

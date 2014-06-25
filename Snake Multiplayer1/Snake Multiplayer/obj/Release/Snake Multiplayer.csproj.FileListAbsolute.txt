@@ -1,0 +1,12 @@
+C:\Users\增偉\Documents\VPN\Snake Multiplayer1\Snake Multiplayer\bin\Release\Snake Multiplayer.exe.config
+C:\Users\增偉\Documents\VPN\Snake Multiplayer1\Snake Multiplayer\bin\Release\Snake Multiplayer.exe
+C:\Users\增偉\Documents\VPN\Snake Multiplayer1\Snake Multiplayer\bin\Release\Snake Multiplayer.pdb
+C:\Users\增偉\Documents\VPN\Snake Multiplayer1\Snake Multiplayer\obj\Release\Snake Multiplayer.csprojResolveAssemblyReference.cache
+C:\Users\增偉\Documents\VPN\Snake Multiplayer1\Snake Multiplayer\obj\Release\Snake_Multiplayer.Form1.resources
+C:\Users\增偉\Documents\VPN\Snake Multiplayer1\Snake Multiplayer\obj\Release\Snake_Multiplayer.Form2.resources
+C:\Users\增偉\Documents\VPN\Snake Multiplayer1\Snake Multiplayer\obj\Release\Snake_Multiplayer.Form3.resources
+C:\Users\增偉\Documents\VPN\Snake Multiplayer1\Snake Multiplayer\obj\Release\Snake_Multiplayer.Form4.resources
+C:\Users\增偉\Documents\VPN\Snake Multiplayer1\Snake Multiplayer\obj\Release\Snake_Multiplayer.Properties.Resources.resources
+C:\Users\增偉\Documents\VPN\Snake Multiplayer1\Snake Multiplayer\obj\Release\Snake Multiplayer.csproj.GenerateResource.Cache
+C:\Users\增偉\Documents\VPN\Snake Multiplayer1\Snake Multiplayer\obj\Release\Snake Multiplayer.exe
+C:\Users\增偉\Documents\VPN\Snake Multiplayer1\Snake Multiplayer\obj\Release\Snake Multiplayer.pdb

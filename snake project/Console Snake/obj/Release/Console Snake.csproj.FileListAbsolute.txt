@@ -3,3 +3,9 @@ E:\Dropbox\Snake Project\Console Snake\bin\Release\Console Snake.exe
 E:\Dropbox\Snake Project\Console Snake\bin\Release\Console Snake.pdb
 E:\Dropbox\Snake Project\Console Snake\obj\Release\Console Snake.exe
 E:\Dropbox\Snake Project\Console Snake\obj\Release\Console Snake.pdb
+C:\Users\增偉\Documents\VPN\snake project\Console Snake\bin\Release\Console Snake.exe.config
+C:\Users\增偉\Documents\VPN\snake project\Console Snake\obj\Release\Console Snake.exe
+C:\Users\增偉\Documents\VPN\snake project\Console Snake\obj\Release\Console Snake.pdb
+C:\Users\增偉\Documents\VPN\snake project\Console Snake\bin\Release\Console Snake.exe
+C:\Users\增偉\Documents\VPN\snake project\Console Snake\bin\Release\Console Snake.pdb
+C:\Users\增偉\Documents\VPN\snake project\Console Snake\obj\Release\Console Snake.csprojResolveAssemblyReference.cache

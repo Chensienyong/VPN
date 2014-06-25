@@ -9,7 +9,8 @@ namespace Console_Snake
 {
     class Snake:movement
     {
-        public bool through = false;
+        public bool me_lose=false;
+        static public bool through = true;
         public int score = 0;
         static public int speed=200;
         static private void checkfood(int x, int y)
@@ -127,6 +128,8 @@ namespace Console_Snake
                             y += 23;
                         else
                         {
+                            me_lose=true;
+                            Thread.Sleep(100);
                             aborting = true;
                             Thread.Sleep(100);
                         }
@@ -144,6 +147,8 @@ namespace Console_Snake
                             y = 1;
                         else
                         {
+                            me_lose = true;
+                            Thread.Sleep(100);
                             aborting = true;
                             Thread.Sleep(100);
                         }
@@ -161,6 +166,8 @@ namespace Console_Snake
                             x += 77;
                         else
                         {
+                            me_lose = true;
+                            Thread.Sleep(100);
                             aborting = true;
                             Thread.Sleep(100);
                         }
@@ -178,6 +185,8 @@ namespace Console_Snake
                             x = 1;
                         else
                         {
+                            me_lose = true;
+                            Thread.Sleep(100);
                             aborting = true;
                             Thread.Sleep(100);
                         }
@@ -217,7 +226,7 @@ namespace Console_Snake
                             Console.SetCursorPosition(60, 26);
                             Console.ForegroundColor = ConsoleColor.Yellow;
                             Console.Write("        ");
-                            Program.tds();
+                            new getdata().tds();
                             t2.Resume();
                         }
                     }

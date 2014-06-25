@@ -10,6 +10,18 @@ namespace Console_Snake
 {
     class Program
     {
+        /*static public string[] setting
+        {
+            get
+            {
+                if (new FileInfo("setting.dat").Exists)
+                {
+                    return File.ReadAllText("setting.dat").Split(' ');
+                }
+                else
+                    return null;
+            }
+        }
         static public void tds()
         {
             for (int i = 3; i > 0; i--)
@@ -33,42 +45,31 @@ namespace Console_Snake
                 return int.Parse(File.ReadAllText("score.dat"));
             else
                 return 0;
-        }
-        /*static Thread pausing = new Thread(new ThreadStart(delegate
-            {
-                bool cek1 = false;
-                while (true)
-                {
-                    if (Snake.pause)
-                    {
-                        cek1 = true;
-                        snake1.t2.Suspend();
-                        snake2.t2.Suspend();
-                    }
-                    else
-                    {
-                        if (cek1)
-                        {
-                            cek1 = false;
-                            snake1.t2.Resume();
-                            snake2.t2.Resume();
-                        }
-                    }
-                }
-            }));*/
-        static public void dual_player()
+        }*/
+        /*static public void dual_player()
         {
             border a = new border();
             Console.SetWindowSize(Console.WindowWidth, 30);
-            Snake snake1 = new Snake();
+            Snake snake1 = new Snake(50,10);
             Snake.speed = 200;
-            Snake snake2 = new Snake(50, 2, 2, ConsoleColor.Red);
+            Snake.through = true;
+            if (setting != null)
+            {
+                if (setting[1] == "1")
+                    Snake.through = false;
+                else
+                    Snake.through = true;
+                int ss=int.Parse(setting[0]) * 10;
+                Snake.speed = 250 - ss;
+            }
+            
+            Snake snake2 = new Snake(2, 10, 2, ConsoleColor.Red);
             //Snake.t3.Start();
             Console.SetCursorPosition(0, 0);
             tds();
             //Console.ReadKey(true);
             snake1.t2.Start();
-            Thread.Sleep(Snake.speed / 5);
+            Thread.Sleep(75);
             snake2.t2.Start();
             Snake.t1.Start();
             Thread pausing = new Thread(new ThreadStart(delegate
@@ -94,7 +95,7 @@ namespace Console_Snake
                             Console.Write("        ");
                             tds();
                             snake1.t2.Resume();
-                            Thread.Sleep(Snake.speed / 5);
+                            Thread.Sleep(75);
                             snake2.t2.Resume();
                         }
                     }
@@ -138,7 +139,6 @@ namespace Console_Snake
                 }
                 if (snake2.point.Last()[0] == snake1.point.Last()[0] && snake2.point.Last()[1] == snake1.point.Last()[1])
                 {
-                    //Console.WriteLine("Player1 Wins!!!");
                     snakea = true;
                     snakeb = true;
                 }
@@ -221,13 +221,23 @@ namespace Console_Snake
             
             //Snake.t3.Start();
             //Console.ReadKey();    
-        }
-        static public void single_player()
+        }*/
+        /*static public void single_player()
         {
             border a = new border();
             Console.SetWindowSize(Console.WindowWidth, 30);
             Snake snake1 = new Snake();
             Snake.speed = 200;
+            Snake.through = true;
+            if (setting != null)
+            {
+                if (setting[1] == "1")
+                    Snake.through = false;
+                else
+                    Snake.through = true;
+                int ss = int.Parse(setting[0]) * 10;
+                Snake.speed = 250 - ss;
+            }
             Console.SetCursorPosition(0, 0);
             Console.SetCursorPosition(40, 26);
             Console.ForegroundColor = ConsoleColor.Magenta;
@@ -259,16 +269,16 @@ namespace Console_Snake
                 Console.WriteLine("Hi-Score = " + hiscore());
             }
             Console.ReadKey();
-        }
+        }*/
         static void Main(string[] args)
         {
-            switch("1")//*/args[0])
+            switch(/*"1")//*/args[0])
             {
                 case "1":
-                    single_player();
+                    new SinglePlay();
                     break;
                 case "2":
-                    dual_player();
+                    new DualPlay();
                     break;
                 default:
                     break;

@@ -8,11 +8,21 @@ namespace Console_Snake
 {
     class border
     {
+        private ConsoleColor color
+        {
+            get 
+            {
+                if (Snake.through)
+                    return ConsoleColor.Green;
+                else
+                    return ConsoleColor.Magenta;
+            }
+        }
         private void full()
         {
             for (int i = 0; i < 80; i++)
             {
-                Console.ForegroundColor = ConsoleColor.Green;
+                Console.ForegroundColor = color;
                 Console.Write("#");
             }
         }
