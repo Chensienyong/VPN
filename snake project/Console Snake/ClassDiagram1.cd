@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Console_Snake.border" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>border.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Console_Snake.eats">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQAAAAAAAAAAAAAAAAAAQAAAAAAAAAgAABAAAAAAA=</HashCode>
+      <FileName>eat.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Console_Snake.movement">
+    <Position X="4.25" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAgAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAIAA=</HashCode>
+      <FileName>movement.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Console_Snake.Program">
+    <Position X="3" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAEAAQAAAAAAAAAABBAAAQAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Console_Snake.Snake">
+    <Position X="0.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAAAQAAAAAAIIAAQAABAAAQAAAAgAAAAAAIA=</HashCode>
+      <FileName>Snake.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Console_Snake.Properties.Settings">
+    <Position X="6.5" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

@@ -262,7 +262,7 @@ namespace Console_Snake
         }
         static void Main(string[] args)
         {
-            switch(/*"1")*/args[0])
+            switch("1")//*/args[0])
             {
                 case "1":
                     single_player();

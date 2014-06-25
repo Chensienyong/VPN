@@ -62,7 +62,7 @@
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(393, 207);
+            this.button2.Location = new System.Drawing.Point(411, 213);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(112, 38);
             this.button2.TabIndex = 1;
@@ -74,7 +74,7 @@
             // button3
             // 
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(393, 271);
+            this.button3.Location = new System.Drawing.Point(342, 267);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(112, 38);
             this.button3.TabIndex = 2;
@@ -147,33 +147,35 @@
             // button4
             // 
             this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.button4.Location = new System.Drawing.Point(435, 135);
+            this.button4.Location = new System.Drawing.Point(411, 137);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(104, 50);
+            this.button4.Size = new System.Drawing.Size(112, 50);
             this.button4.TabIndex = 6;
             this.button4.Text = "Dual Player";
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.button4.MouseEnter += new System.EventHandler(this.button4_MouseEnter);
             // 
             // label1
             // 
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label1.Location = new System.Drawing.Point(277, 189);
+            this.label1.Location = new System.Drawing.Point(269, 191);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(98, 18);
+            this.label1.Size = new System.Drawing.Size(112, 18);
             this.label1.TabIndex = 7;
             this.label1.Text = "Hi-Score : ";
             // 
             // button5
             // 
             this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.button5.Location = new System.Drawing.Point(271, 210);
+            this.button5.Location = new System.Drawing.Point(269, 214);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 35);
+            this.button5.Size = new System.Drawing.Size(112, 38);
             this.button5.TabIndex = 8;
             this.button5.Text = "Reset Hi-Score";
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click);
+            this.button5.MouseEnter += new System.EventHandler(this.button5_MouseEnter);
             // 
             // Form1
             // 

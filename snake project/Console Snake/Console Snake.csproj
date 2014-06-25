@@ -110,6 +110,7 @@
   <ItemGroup>
     <None Include="App.config" />
     <Compile Include="border.cs" />
+    <None Include="ClassDiagram1.cd" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

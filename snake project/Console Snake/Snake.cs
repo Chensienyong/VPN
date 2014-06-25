@@ -9,6 +9,7 @@ namespace Console_Snake
 {
     class Snake:movement
     {
+        public bool through = false;
         public int score = 0;
         static public int speed=200;
         static private void checkfood(int x, int y)
@@ -122,7 +123,13 @@ namespace Console_Snake
                     }
                     else
                     {
-                        y += 23;
+                        if (through)
+                            y += 23;
+                        else
+                        {
+                            aborting = true;
+                            Thread.Sleep(100);
+                        }
                     }
                 }
                 else if (snakehead[nomor-1] == 2)
@@ -133,7 +140,13 @@ namespace Console_Snake
                     }
                     else
                     {
-                        y = 1;
+                        if (through)
+                            y = 1;
+                        else
+                        {
+                            aborting = true;
+                            Thread.Sleep(100);
+                        }
                     }
                 }
                 else if (snakehead[nomor-1] == 3)
@@ -144,7 +157,13 @@ namespace Console_Snake
                     }
                     else
                     {
-                        x += 77;
+                        if (through)
+                            x += 77;
+                        else
+                        {
+                            aborting = true;
+                            Thread.Sleep(100);
+                        }
                     }
                 }
                 else if (snakehead[nomor-1] == 4)
@@ -155,7 +174,13 @@ namespace Console_Snake
                     }
                     else
                     {
-                        x = 1;
+                        if (through)
+                            x = 1;
+                        else
+                        {
+                            aborting = true;
+                            Thread.Sleep(100);
+                        }
                     }
                 }
             }

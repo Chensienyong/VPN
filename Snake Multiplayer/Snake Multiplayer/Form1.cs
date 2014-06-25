@@ -15,7 +15,7 @@ namespace Snake_Multiplayer
 {
     public partial class Form1 : Form
     {
-        SoundPlayer choose = new SoundPlayer("D:/Flashdisk/up-down");
+        SoundPlayer choose = new SoundPlayer(@"C:\Users\增偉\Documents\VPN\Snake Multiplayer\Snake Multiplayer\Resources\up-down.wav");
         public Form1()
         {
             InitializeComponent();
@@ -67,17 +67,20 @@ namespace Snake_Multiplayer
 
         private void button1_MouseEnter(object sender, EventArgs e)
         {
-            toolStripStatusLabel1.Text = "Start the game";
+            toolStripStatusLabel1.Text = "Start the game with one player";
+            choose.Play();
         }
 
         private void button2_MouseEnter(object sender, EventArgs e)
         {
             toolStripStatusLabel1.Text = "See How to Play snake";
+            choose.Play();
         }
 
         private void button3_MouseEnter(object sender, EventArgs e)
         {
             toolStripStatusLabel1.Text = "See the credit of the snake multiplayer";
+            choose.Play();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -112,6 +115,18 @@ namespace Snake_Multiplayer
         {
             new FileInfo("score.dat").Delete();
             label1.Text ="Hi-Score : 0";
+        }
+
+        private void button4_MouseEnter(object sender, EventArgs e)
+        {
+            toolStripStatusLabel1.Text = "Start the game with two player"; 
+            choose.Play();
+        }
+
+        private void button5_MouseEnter(object sender, EventArgs e)
+        {
+            toolStripStatusLabel1.Text = "Reset current Hi-Score";
+            choose.Play();
         }
     }
 }
