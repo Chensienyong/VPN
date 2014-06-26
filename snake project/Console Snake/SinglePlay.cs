@@ -9,6 +9,13 @@ namespace Console_Snake
 {
     class SinglePlay:getdata
     {
+        protected override int hiscore()
+        {
+            if (new FileInfo("score.dat").Exists)
+                return int.Parse(File.ReadAllText("score.dat"));
+            else
+                return base.hiscore();
+        }
         public SinglePlay()
         {
             Snake.speed = 200;
