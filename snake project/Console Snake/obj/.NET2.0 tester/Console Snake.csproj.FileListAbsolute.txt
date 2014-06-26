@@ -1,0 +1,2 @@
+C:\Users\增偉\Documents\VPN\snake project\Console Snake\bin\.NET2.0 tester\Console Snake.exe.config
+C:\Users\增偉\Documents\VPN\snake project\Console Snake\obj\.NET2.0 tester\Console Snake.csprojResolveAssemblyReference.cache
