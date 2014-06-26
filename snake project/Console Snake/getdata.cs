@@ -38,12 +38,9 @@ namespace Console_Snake
             Console.ForegroundColor = ConsoleColor.Yellow;
             Console.Write("     ");
         }
-        protected int hiscore()
+        protected virtual int hiscore()
         {
-            if (new FileInfo("score.dat").Exists)
-                return int.Parse(File.ReadAllText("score.dat"));
-            else
-                return 0;
+            return 0;
         }
     }
 }
