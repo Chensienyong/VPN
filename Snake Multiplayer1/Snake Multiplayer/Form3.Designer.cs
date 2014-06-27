@@ -96,9 +96,9 @@
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.label2.Location = new System.Drawing.Point(83, 90);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(328, 17);
+            this.label2.Size = new System.Drawing.Size(332, 17);
             this.label2.TabIndex = 2;
-            this.label2.Text = "Alwin M. , Kelvin , Jefry T. , Soewandi K.S. , Steven";
+            this.label2.Text = "Alwin M. , Kelvin , Jeffry T. , Soewandi K.S. , Steven";
             // 
             // label3
             // 
@@ -196,7 +196,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(97, 35);
             this.button1.TabIndex = 13;
-            this.button1.Text = "Exit";
+            this.button1.Text = "E&xit";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             this.button1.MouseEnter += new System.EventHandler(this.button1_MouseEnter_1);
